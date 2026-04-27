@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Email Sorter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>AI Email Sorter</h1>
+      <span class="badge" id="status-badge">Idle</span>
+    </header>
+
+    <!-- Settings -->
+    <section>
+      <h2>Settings</h2>
+
+      <div class="field">
+        <label for="backend-url">Backend URL</label>
+        <input type="text" id="backend-url" placeholder="http://localhost:8000">
+      </div>
+
+      <div class="field row">
+        <label for="gmail-toggle">Enable Gmail sorting</label>
+        <label class="toggle">
+          <input type="checkbox" id="gmail-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section>
+      <div class="section-header">
+        <h2>Categories</h2>
+        <button class="btn-text" id="add-btn">+ Add</button>
+      </div>
+
+      <div id="cat-list"></div>
+
+      <!-- Inline add form (hidden by default) -->
+      <div id="add-form" class="add-form hidden">
+        <input type="text" id="new-name" placeholder="Name (e.g. Internships)" maxlength="40">
+        <textarea id="new-desc" placeholder="Describe what emails belong here…" rows="3" maxlength="300"></textarea>
+        <div class="form-actions">
+          <button class="btn-primary" id="save-btn">Save</button>
+          <button class="btn-secondary" id="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions">
+      <button class="btn-primary full-width" id="sort-now-btn">Sort Now</button>
+      <p class="last-run" id="last-run"></p>
+    </section>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

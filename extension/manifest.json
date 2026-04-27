@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI Email Sorter",
+  "version": "0.1.0",
+  "description": "Automatically sorts Gmail emails into folders using AI",
+  "permissions": ["identity", "storage", "alarms"],
+  "host_permissions": [
+    "https://gmail.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "AI Email Sorter"
+  },
+  "oauth2": {
+    "client_id": "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.modify",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
